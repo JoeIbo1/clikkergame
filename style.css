@@ -12,7 +12,7 @@
 #dino1_container {
   width: 17%;
   position: absolute;
-  top: 55%;
+  top: 80%;
   left: 5%;
 }
 #dino1_sprite {
@@ -21,7 +21,7 @@
 #dino2_container {
   width: 15%;
   position: absolute;
-  top: 45%;
+  top: 70%;
   left: 80%;
 }
 #dino2_sprite {
@@ -30,7 +30,7 @@
 #dino3_container {
   width: 17%;
   position: absolute;
-  top: 40%;
+  top: 65%;
   left: 25%;
 }
 #dino3_sprite {
@@ -39,7 +39,7 @@
 #dino4_container {
   width: 20%;
   position: absolute;
-  top: 48%;
+  top: 70%;
   left: 50%;
 }
 #dino4_sprite {
@@ -48,7 +48,7 @@
 #rocket_container {
   width: 12%;
   position: absolute;
-  top: 20%;
+  top: 40%;
   left: 70%;
   rotate: 240deg;
 }
