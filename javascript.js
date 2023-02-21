@@ -1,21 +1,34 @@
-let score = 0;
-let life = 3;
-let time = 0;
+window.addEventListener("load", start);
 
-// Get the score board element
-const scoreBoard = document.getElementById("score_board");
+function start() {
+    
+  document.querySelector("#rocket_sprite").addEventListener("click", fade);
+  document.querySelector("#rocket_container").addEventListener("click", stop1);
+  document.querySelector("#rocket_sprite") .addEventListener("animationend", stop);
+   
+      
 
-// Update the text content with the current score
-scoreBoard.textContent = "Score: " + score;
 
-// Get the life board element
-const lifeBoard = document.getElementById("life_board");
 
-// Update the text content with the current life count
-lifeBoard.textContent = "Life: " + life;
+}
 
-// Get the time board element
-const timeBoard = document.getElementById("time_board");
+function fade() {
+  console.log("fade");
+  document.querySelector("#rocket_sprite").classList.add("fade_out");
+}
 
-// Update the text content with the current time value
-timeBoard.textContent = "Time: " + time;
+function stop() {
+  console.log("stop");
+  document.querySelector("#rocket_sprite").classList.remove("fade_out");
+}
+
+
+
+
+
+
+
+
+function stop1() {
+  document.querySelector("#rocket_container").classList.add("paused");
+}
