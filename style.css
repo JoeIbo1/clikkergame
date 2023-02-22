@@ -115,13 +115,55 @@ body {
   width: 100%;
   rotate: 100deg;
 }
-#meteor_container {
+#rocket_container2 {
+  width: 10%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  rotate: 20deg;
+}
+#rocket_sprite2 {
+  width: 100%;
+  rotate: 100deg;
+}
+#meteor_container1 {
+  width: 10%;
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  rotate: -30deg;
+}
+#meteor_sprite1 {
+  width: 100%;
+}
+#meteor_container2 {
+  width: 10%;
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  rotate: -30deg;
+}
+#meteor_sprite2 {
+  width: 100%;
+}
+#meteor_container3 {
+  width: 10%;
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  rotate: -30deg;
+}
+#meteor_sprite3 {
+  width: 100%;
+}
+#meteor_container4 {
   width: 10%;
   position: absolute;
   top: 30%;
   left: 50%;
+  rotate: -30deg;
 }
-#meteor_sprite {
+#meteor_sprite4 {
   width: 100%;
 }
 #astroid_container {
@@ -187,7 +229,7 @@ img {
 
 @keyframes yelloD{
   0%{
-    transform: translateX(1100px);
+    transform: translateX(1300px);
   }
 
   100%{
@@ -255,19 +297,100 @@ img {
 }
 
 .astro{
- animation: astro 4s  linear infinite;
+ animation: astro 1.4s 20s linear infinite backwards;
 }
 
 @keyframes astro{
    0%{
-    transform: translateX(400px);
+    transform: translateX(400px) rotate(0deg);
   }
-
+  10%{
+    transform: translateX(250px) rotate(30deg);
+  }
+  20%{
+    transform: translateX(100px) rotate(0deg);
+  }
+  30%{
+    transform: translateX(-50px) rotate(30deg);
+  }
+  40%{
+    transform: translateX(-200px) rotate(0deg);
+  }
+  50%{
+    transform: translateX(-350px) rotate(30deg);
+  }
+  60%{
+    transform: translateX(-500px) rotate(0deg);
+  }
+  70%{
+    transform: translateX(-650px) rotate(30deg);
+  }
+  80%{
+    transform: translateX(-800px) rotate(0deg);
+  }
+  90%{
+    transform: translateX(-950px) rotate(30deg);
+  }
   100%{
-    transform: translateX(-1100px);
+    transform: translateX(-1100px) rotate(0deg);
   }
 }
 
+.meteo1{
+ animation: meteo1 4s 2s  linear infinite backwards;
+}
+
+@keyframes meteo1{
+   0%{
+    transform: translateX(600px)rotate(0deg);
+  }
+
+  100%{
+    transform: translateX(-1100px) rotate(200deg);
+  }
+}
+
+.meteo2{
+ animation: meteo2 4s 4s  linear infinite backwards;
+}
+
+@keyframes meteo2{
+   0%{
+    transform: translateX(600px)rotate(0deg);
+  }
+
+  100%{
+    transform: translateX(-1100px) rotate(200deg);
+  }
+}
+
+.meteo3{
+ animation: meteo3 3s 6s  linear infinite backwards;
+}
+
+@keyframes meteo3{
+   0%{
+    transform: translateX(600px)rotate(0deg);
+  }
+
+  100%{
+    transform: translateX(-1100px) rotate(200deg);
+  }
+}
+
+.meteo4{
+ animation: meteo4 5s 7s  linear infinite backwards;
+}
+
+@keyframes meteo4{
+   0%{
+    transform: translateX(600px)rotate(0deg);
+  }
+
+  100%{
+    transform: translateX(-1100px) rotate(200deg);
+  }
+}
 
 
 
@@ -291,11 +414,28 @@ img {
     100% {opacity: 0;}
 }
 
-.rocket1{
- animation: rocket1 4s  linear infinite;
+.falling{
+ animation: falling 3s  linear infinite;
+ animation-delay: 10s;
+ animation-fill-mode: backwards;
 }
 
-@keyframes rocket1{
+@keyframes falling{
+   0%{
+    transform: translateX(-900px);
+  }
+
+  100%{
+    transform: translateX(1100px);
+  }
+}
+.falling2{
+ animation: falling2 3s  linear infinite;
+ animation-delay: 25s;
+ animation-fill-mode: backwards;
+}
+
+@keyframes falling2{
    0%{
     transform: translateX(-900px);
   }
@@ -308,3 +448,69 @@ img {
 .paused {
     animation-play-state: paused;
 }
+
+
+.zoom_out {
+    animation-name: zoom_out;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoom_out {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+
+.zoom_m {
+    animation-name: zoom_m;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoom_m {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    100% {
+        transform: scale(0) rotate(3600deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.zoom_in {
+    animation-name: zoom_in;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoom_in {
+    0% {
+        transform: translate(0,0) scale(15) rotate(0deg);
+    }    
+    90% {
+        transform: translate(100%,0) scale(1000) rotate(90deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100%,0) scale(1) rotate(90deg);
+        opacity: 0;
+    }
+}
+
