@@ -316,12 +316,14 @@ body {
 }
 
 .redD{
-  animation: redD 4s linear infinite
+  animation: redD 4s linear infinite;
+  transform-origin:200px;
 }
 
 @keyframes redD{
   100%{
     transform: rotate(-360deg);
+    
   }
 }
 

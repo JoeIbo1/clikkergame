@@ -188,3 +188,4 @@ function astroidGone2() {
     .querySelector("#astroid_container2")
     .addEventListener("click", clickAstroid2);
 }
+
