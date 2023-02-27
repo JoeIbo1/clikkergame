@@ -343,7 +343,7 @@ body {
 
 .redD{
   animation: redD 4s linear infinite;
-  transform-origin:300px;
+  transform-origin:10vw -7vw;
 }
 
 @keyframes redD{

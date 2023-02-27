@@ -6,8 +6,9 @@ let lives = 6;
 let points = 0;
 function start() {
   // Start animationer
+  let rocket = document.querySelector("#rocket_container");
   
-  document.querySelector("#rocket_container").classList.add("falling");
+  rocket.classList.add("falling");
   document.querySelector("#rocket_container2").classList.add("falling2");
   document.querySelector("#astroid_container").classList.add("astro");
   document.querySelector("#astroid_container2").classList.add("astro2");
@@ -16,9 +17,7 @@ function start() {
   document.querySelector("#meteor_container3").classList.add("meteo3");
   document.querySelector("#meteor_container4").classList.add("meteo4");
   // Registrer click
-  document
-    .querySelector("#rocket_container")
-    .addEventListener("click", clickRocket);
+  rocket .addEventListener("click", clickRocket);
   document
     .querySelector("#rocket_container2")
     .addEventListener("click", clickRocket2);
@@ -417,7 +416,7 @@ function win() {
 
 function incrementPoints5() {
   console.log("Giv point");
-  points + 5;
+  points+= 5;
   console.log("har nu " + points + " point");
   displayPoints();
   win();
@@ -425,7 +424,7 @@ function incrementPoints5() {
 
 function incrementPoints10() {
   console.log("Giv point");
-  points+10;
+  points += 10;
   console.log("har nu " + points + " point");
   displayPoints();
   win();
@@ -436,7 +435,7 @@ function incrementPoints10() {
 
 function incrementPoints() {
   console.log("Giv point");
-  points ++;
+  points++;
   console.log("har nu " + points + " point");
   displayPoints();
   win();
