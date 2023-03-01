@@ -7,36 +7,32 @@ let points = 0;
 function start() {
   // Start animationer
   let rocket = document.querySelector("#rocket_container");
-  
+  let rocket2 = document.querySelector("#rocket_container2");
+  let astroid = document.querySelector("#astroid_container");
+  let astroid2 = document.querySelector("#astroid_container2");
+  let meteor = document.querySelector("#meteor_container1");
+  let meteor2 = document.querySelector("#meteor_container2");
+  let meteor3 = document.querySelector("#meteor_container3");
+  let meteor4 = document.querySelector("#meteor_container4");
   rocket.classList.add("falling");
-  document.querySelector("#rocket_container2").classList.add("falling2");
-  document.querySelector("#astroid_container").classList.add("astro");
-  document.querySelector("#astroid_container2").classList.add("astro2");
-  document.querySelector("#meteor_container1").classList.add("meteo1");
-  document.querySelector("#meteor_container2").classList.add("meteo2");
-  document.querySelector("#meteor_container3").classList.add("meteo3");
-  document.querySelector("#meteor_container4").classList.add("meteo4");
+  rocket2.classList.add("falling2");
+  astroid.classList.add("astro");
+  astroid2.classList.add("astro2");
+  meteor.classList.add("meteo1");
+  meteor2.classList.add("meteo2");
+  meteor3.classList.add("meteo3");
+  meteor4.classList.add("meteo4");
   // Registrer click
-  rocket .addEventListener("click", clickRocket);
-  document
-    .querySelector("#rocket_container2")
-    .addEventListener("click", clickRocket2);
-  document
-    .querySelector("#astroid_container")
-    .addEventListener("click", clickAstroid);
-  document.querySelector("#astroid_container2").addEventListener("click", clickAstroid2);
-  document
-    .querySelector("#meteor_container1")
-    .addEventListener("click", clickMeteo1);
-  document
-    .querySelector("#meteor_container2")
-    .addEventListener("click", clickMeteo2);
-  document
-    .querySelector("#meteor_container3")
-    .addEventListener("click", clickMeteo3);
-  document
-    .querySelector("#meteor_container4")
-    .addEventListener("click", clickMeteo4);
+  rocket.addEventListener("click", clickRocket);
+  rocket2.addEventListener("click", clickRocket2);
+  astroid.addEventListener("click", clickAstroid);
+  astroid2.addEventListener("click", clickAstroid2);
+  meteor.addEventListener("click", clickMeteo);
+  meteor2.addEventListener("click", clickMeteo);
+  meteor3.addEventListener("click", clickMeteo);
+  meteor4.addEventListener("click", clickMeteo);
+
+  document.querySelector("#play_game").play();
 }
 
 function clickRocket() {
@@ -57,7 +53,7 @@ function clickRocket() {
     .querySelector("#rocket_container")
     .addEventListener("animationend", rocketGone);
 
-    incrementPoints5();
+  incrementPoints5();
 }
 function clickRocket2() {
   console.log("Click rocket2");
@@ -77,7 +73,7 @@ function clickRocket2() {
     .querySelector("#rocket_container2")
     .addEventListener("animationend", rocketGone2);
 
-    incrementPoints5();
+  incrementPoints5();
 }
 
 function clickAstroid() {
@@ -98,7 +94,7 @@ function clickAstroid() {
     .querySelector("#astroid_container")
     .addEventListener("animationend", astroidGone);
 
-    incrementPoints10();
+  incrementPoints10();
 }
 function clickAstroid2() {
   console.log("Click astroid2");
@@ -118,89 +114,24 @@ function clickAstroid2() {
     .querySelector("#astroid_container2")
     .addEventListener("animationend", astroidGone2);
 
-    incrementPoints10();
+  incrementPoints10();
 }
 
-function clickMeteo1() {
+function clickMeteo() {
   console.log("Click astroid2");
+  let meteor = this;
   // Forhindr gentagne clicks
-  document
-    .querySelector("#meteor_container1")
-    .removeEventListener("click", clickMeteo1);
+  meteor.removeEventListener("click", clickMeteo);
 
   // Stop coin container
-  document.querySelector("#meteor_container1").classList.add("paused");
+  meteor.classList.add("paused");
 
   // sæt forsvind-animation på coin
-  document.querySelector("#meteor_sprite1").classList.add("zoom_m");
+  meteor.querySelector("img").classList.add("zoom_m");
 
   // når forsvind-animation er færdig: coinGone
-  document
-    .querySelector("#meteor_container1")
-    .addEventListener("animationend", meteorGone1);
-        incrementPoints();
-
-
-}
-function clickMeteo2() {
-  console.log("Click astroid2");
-  // Forhindr gentagne clicks
-  document
-    .querySelector("#meteor_container2")
-    .removeEventListener("click", clickMeteo2);
-
-  // Stop coin container
-  document.querySelector("#meteor_container2").classList.add("paused");
-
-  // sæt forsvind-animation på coin
-  document.querySelector("#meteor_sprite2").classList.add("zoom_m");
-
-  // når forsvind-animation er færdig: coinGone
-  document
-    .querySelector("#meteor_container2")
-    .addEventListener("animationend", meteorGone2);
-
-    incrementPoints();
-}
-function clickMeteo3() {
-  console.log("Click astroid2");
-  // Forhindr gentagne clicks
-  document
-    .querySelector("#meteor_container3")
-    .removeEventListener("click", clickMeteo3);
-
-  // Stop coin container
-  document.querySelector("#meteor_container3").classList.add("paused");
-
-  // sæt forsvind-animation på coin
-  document.querySelector("#meteor_sprite3").classList.add("zoom_m");
-
-  // når forsvind-animation er færdig: coinGone
-  document
-    .querySelector("#meteor_container3")
-    .addEventListener("animationend", meteorGone3);
-
-    incrementPoints();
-}
-function clickMeteo4() {
-  console.log("Click astroid2");
-  // Forhindr gentagne clicks
-  document
-    .querySelector("#meteor_container4")
-    .removeEventListener("click", clickMeteo4);
-
-  // Stop coin container
-  document.querySelector("#meteor_container4").classList.add("paused");
-
-  // sæt forsvind-animation på coin
-  document.querySelector("#meteor_sprite4").classList.add("zoom_m");
-
-  // når forsvind-animation er færdig: coinGone
-  document
-    .querySelector("#meteor_container4")
-    .addEventListener("animationend", meteorGone4);
-
-    incrementPoints();
+  meteor.addEventListener("animationend", meteorGone1);
+  incrementPoints();
 }
 
 function rocketGone() {
@@ -312,7 +243,7 @@ function meteorGone1() {
   // gør det muligt at klikke på coin igen
   document
     .querySelector("#meteor_container1")
-    .addEventListener("click", clickMeteo1);
+    .addEventListener("click", clickMeteo);
 }
 function meteorGone2() {
   // fjern event der bringer os herind
@@ -334,7 +265,7 @@ function meteorGone2() {
   // gør det muligt at klikke på coin igen
   document
     .querySelector("#meteor_container2")
-    .addEventListener("click", clickMeteo2);
+    .addEventListener("click", clickMeteo);
 }
 function meteorGone3() {
   // fjern event der bringer os herind
@@ -356,7 +287,7 @@ function meteorGone3() {
   // gør det muligt at klikke på coin igen
   document
     .querySelector("#meteor_container3")
-    .addEventListener("click", clickMeteo3);
+    .addEventListener("click", clickMeteo);
 }
 function meteorGone4() {
   // fjern event der bringer os herind
@@ -378,14 +309,8 @@ function meteorGone4() {
   // gør det muligt at klikke på coin igen
   document
     .querySelector("#meteor_container4")
-    .addEventListener("click", clickMeteo4);
+    .addEventListener("click", clickMeteo);
 }
-
-
-
-
-
-
 
 function decrementLives() {
   console.log("mist et liv");
@@ -393,7 +318,6 @@ function decrementLives() {
   lives--;
   lose();
 }
-
 
 function lose() {
   if (lives == 0) {
@@ -404,19 +328,15 @@ function lose() {
 }
 
 function win() {
-  if (points == 10) {
+  if (points >= 50) {
     document.querySelector("#level_complete").classList.remove("hidden");
   } else {
   }
 }
 
-
-
-
-
 function incrementPoints5() {
   console.log("Giv point");
-  points+= 5;
+  points += 5;
   console.log("har nu " + points + " point");
   displayPoints();
   win();
@@ -429,9 +349,6 @@ function incrementPoints10() {
   displayPoints();
   win();
 }
-
-
-
 
 function incrementPoints() {
   console.log("Giv point");
