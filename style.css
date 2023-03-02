@@ -156,9 +156,13 @@ body {
   width: 10%;
   position: absolute;
   top: 50%;
-  left: 90%;
   rotate: -30deg;
 }
+
+.position1{
+  left: 90%;
+}
+
 #meteor_sprite1 {
   width: 100%;
 }
@@ -166,9 +170,13 @@ body {
   width: 10%;
   position: absolute;
   top: 30%;
-  left: 60%;
   rotate: -30deg;
 }
+
+.position2{
+  left: 60%;
+}
+
 #meteor_sprite2 {
   width: 100%;
 }
@@ -176,9 +184,13 @@ body {
   width: 10%;
   position: absolute;
   top: 30%;
-  left: 80%;
   rotate: -30deg;
 }
+
+.position3{
+  left: 80%;
+}
+
 #meteor_sprite3 {
   width: 100%;
 }
@@ -186,9 +198,13 @@ body {
   width: 10%;
   position: absolute;
   top: 30%;
-  left: 50%;
   rotate: -30deg;
 }
+
+.position4{
+  left: 50%;
+}
+
 #meteor_sprite4 {
   width: 100%;
 }
@@ -438,12 +454,12 @@ body {
   }
 }
 
-.meteo1{
- animation: meteo1 4s 2s  linear infinite backwards;
+.meteoFalling{
+ animation: meteoFalling 4s 2s  linear infinite backwards;
   filter: drop-shadow(0 0 20px rgb(30, 1, 1));
 }
 
-@keyframes meteo1{
+@keyframes meteoFalling{
    0%{
     transform: translateX(700px)rotate(0deg);
   }
