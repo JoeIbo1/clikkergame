@@ -28,6 +28,31 @@ img {
   background-image: url(img/vulcan\ ny.png);
   background-size: cover;
 }
+
+#start {
+    grid-area: 1 /1;
+    z-index: 999;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-image: url(img/start\ skærm.jpg);
+    background-size: cover;
+    padding: 3em 5em 3em 5em;
+}
+
+#start p {
+  display: grid;
+
+  grid-template-columns: 100%;
+
+  grid-template-rows: 50%;
+  text-shadow: 200px #ffffff;
+    text-decoration-color: #c90303;
+    text-decoration-style: dotted;
+    -moz-text-size-adjust: 40% ;
+    font-size: large;
+}
+
 #game {
   grid-area: 1 / 1;
 
@@ -81,7 +106,8 @@ body {
 
 .hidden,
 #game_over.hidden,
-#level_complete.hidden {
+#level_complete.hidden,#game.hidden,
+#start.hidden  {
     display: none;
 }
 
@@ -251,6 +277,30 @@ body {
     font-family: sans-serif;
     
     pointer-events: none;
+}
+
+/* Timer */
+
+#time_board {
+    position: relative;
+}
+
+#time_container {
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 30/6;
+    border: 2px solid black;
+    background-color: rgba(208, 204, 204, 0.383);
+    top: 1.6vh;
+    right: 0.2vw;
+}
+
+#time_sprite {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: limegreen;
+    transform-origin: right;
 }
 
 #score_board {
@@ -645,3 +695,62 @@ body {
 
 
 
+
+
+@keyframes pulse_kf {
+    0% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse {
+    animation-name: pulse_kf;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+button {
+    padding: 0.5em 1em;
+    font-size: 2em;
+    margin: auto;
+    background-color: #ff0101;
+    color: #110c0c;
+    border: 10px solid #833232;
+    cursor: pointer;
+    border-radius: 10px;
+     filter: drop-shadow(0 0 50px rgb(238, 9, 9));
+
+}
+
+
+
+
+/* ------------ TIMER ANIMATIONER ------------ */
+
+.shrink {
+    animation-name: shrink_kf;
+    animation-duration: 60s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes shrink_kf {
+    0% {
+        scale: 1 1;
+        background-color: limegreen;
+    }
+    50% {
+        background-color: rgb(255, 230, 0);
+    }
+    100% {
+        scale: 0 1;
+        background-color: red;
+    }
+}
