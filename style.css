@@ -37,20 +37,14 @@ img {
     align-content: center;
     background-image: url(img/start\ skærm.jpg);
     background-size: cover;
-    padding: 3em 5em 3em 5em;
+    text-align: center;
 }
 
 #start p {
-  display: grid;
-
-  grid-template-columns: 100%;
-
-  grid-template-rows: 50%;
-  text-shadow: 200px #ffffff;
-    text-decoration-color: #c90303;
-    text-decoration-style: dotted;
-    -moz-text-size-adjust: 40% ;
+    background-color: #dcdee39e;
+    border-radius: 50%;
     font-size: large;
+
 }
 
 #game {
@@ -234,6 +228,7 @@ body {
 #meteor_sprite4 {
   width: 100%;
 }
+
 #astroid_container {
   width: 30%;
   position: absolute;
@@ -242,16 +237,6 @@ body {
   rotate: -40deg;
 }
 #astroid_sprite {
-  width: 100%;
-}
-#astroid_container2 {
-  width: 30%;
-  position: absolute;
-  top: 10%;
-  left: 70%;
-  rotate: -40deg;
-}
-#astroid_sprite2 {
   width: 100%;
 }
 
@@ -422,14 +407,14 @@ body {
 }
 
 .astro{
- animation: astro 1.4s 20s linear infinite backwards;
+ animation: astro 1s 20s linear infinite backwards;
   filter: drop-shadow(0 0 30px rgb(255, 1, 1));
 
 }
 
 @keyframes astro{
    0%{
-    transform: translateX(600px) rotate(0deg);
+    transform: translateX(700px) rotate(0deg);
   }
   10%{
     transform: translateX(250px) rotate(30deg);
@@ -459,121 +444,37 @@ body {
     transform: translateX(-950px) rotate(30deg);
   }
   100%{
-    transform: translateX(-1100px) rotate(0deg);
-  }
-}
-.astro2{
- animation: astro2 1.4s 40s linear infinite backwards;
-  filter: drop-shadow(0 0 30px rgb(255, 1, 1));
-
-}
-
-@keyframes astro2{
-   0%{
-    transform: translateX(600px) rotate(0deg);
-  }
-  10%{
-    transform: translateX(250px) rotate(30deg);
-  }
-  20%{
-    transform: translateX(100px) rotate(0deg);
-  }
-  30%{
-    transform: translateX(-50px) rotate(30deg);
-  }
-  40%{
-    transform: translateX(-200px) rotate(0deg);
-  }
-  50%{
-    transform: translateX(-350px) rotate(30deg);
-  }
-  60%{
-    transform: translateX(-500px) rotate(0deg);
-  }
-  70%{
-    transform: translateX(-650px) rotate(30deg);
-  }
-  80%{
-    transform: translateX(-800px) rotate(0deg);
-  }
-  90%{
-    transform: translateX(-950px) rotate(30deg);
-  }
-  100%{
-    transform: translateX(-1100px) rotate(0deg);
+    transform: translateX(-1300px) rotate(0deg);
   }
 }
 
 .meteoFalling{
- animation: meteoFalling 4s 2s  linear infinite backwards;
+ animation: meteoFalling 3s linear infinite backwards;
   filter: drop-shadow(0 0 20px rgb(30, 1, 1));
 }
 
 @keyframes meteoFalling{
    0%{
-    transform: translateX(700px)rotate(0deg);
+    transform: translateX(1200px)rotate(0deg);
   }
 
   100%{
-    transform: translateX(-1100px) rotate(200deg);
+    transform: translateX(-1500px) rotate(200deg);
   }
 }
 
-.meteo2{
- animation: meteo2 4s 4s  linear infinite backwards;
-  filter: drop-shadow(0 0 20px rgb(30, 1, 1));
-
+.delay1{
+  animation-delay: 1s;
 }
-
-@keyframes meteo2{
-   0%{
-    transform: translateX(700px)rotate(0deg);
-  }
-
-  100%{
-    transform: translateX(-1100px) rotate(200deg);
-  }
+.delay2{
+  animation-delay: 2s;
 }
-
-.meteo3{
- animation: meteo3 3s 6s  linear infinite backwards;
-  filter: drop-shadow(0 0 20px rgb(30, 1, 1));
-
+.delay3{
+  animation-delay: 3s;
 }
-
-@keyframes meteo3{
-   0%{
-    transform: translateX(700px)rotate(0deg);
-  }
-
-  100%{
-    transform: translateX(-1100px) rotate(200deg);
-  }
+.delay4{
+  animation-delay: 4s;
 }
-
-.meteo4{
- animation: meteo4 5s 7s  linear infinite backwards;
-  filter: drop-shadow(0 0 20px rgb(30, 1, 1));
-
-}
-
-@keyframes meteo4{
-   0%{
-    transform: translateX(800px)rotate(0deg);
-  }
-
-  100%{
-    transform: translateX(-1100px) rotate(200deg);
-  }
-}
-
-
-
-
-
-
-
-
 
 
 
@@ -590,8 +491,8 @@ body {
 }
 
 .falling{
- animation: falling 3s  linear infinite;
- animation-delay: 10s;
+ animation: falling 2s  linear infinite;
+ animation-delay: 12s;
  animation-fill-mode: backwards;
  filter: drop-shadow(0 0 8px rgb(14, 1, 255));
 
@@ -603,24 +504,7 @@ body {
   }
 
   100%{
-    transform: translateX(1100px);
-  }
-}
-.falling2{
- animation: falling2 3s  linear infinite;
- animation-delay: 25s;
- animation-fill-mode: backwards;
- filter: drop-shadow(0 0 8px rgb(48, 1, 255));
-
-}
-
-@keyframes falling2{
-   0%{
-    transform: translateX(-900px);
-  }
-
-  100%{
-    transform: translateX(1100px);
+    transform: translateX(1700px);
   }
 }
 
@@ -638,10 +522,10 @@ body {
 
 @keyframes zoom_out {
     0% {
-        transform: scale(1);
+        transform: rotate(-60deg) translateX(0px);
     }
     100% {
-        transform: scale(0);
+        transform: rotate(-60deg) translateY(-1000px);
     }
 }
 
