@@ -525,7 +525,7 @@ body {
         transform: rotate(-60deg) translateX(0px);
     }
     100% {
-        transform: rotate(-60deg) translateY(-1000px);
+        transform: rotate(-60deg) translateY(-1400px);
     }
 }
 

@@ -145,6 +145,7 @@ function clickMeteo() {
   // Play the sound effect
   document.querySelector("#play_meto").currentTime = 0;
   document.querySelector("#play_meto").play();
+   document.querySelector("#play_meto").volume = 0.2;
 
   incrementPoints();
 }
